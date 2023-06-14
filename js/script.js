@@ -103,7 +103,7 @@ function iniciarJogo(){
     snake.unshift(newHead);
 }
 
-let jogo = setInterval(iniciarJogo, 1000);
+let jogo = setInterval(iniciarJogo, 250);
 
 
 
@@ -114,43 +114,3 @@ let jogo = setInterval(iniciarJogo, 1000);
 
 
 
-
-// console.clear();
-// console.log('snake');
-// console.log('x: ' + snake[0].x);
-// console.log('y: ' + snake[0].y);
-// console.log('food');
-// console.log('x: ' + food.x);
-// console.log('y: ' + food.y);
-
-// event.keyCode:
-// 37 = seta para esquerda
-// 38 = seta para cima
-// 39 = seta para direita
-// 40 = seta para baixo
-// console.log(event.keyCode);
-
-
-
-
-
-
-
-
-
-
-
-// console.clear();
-// console.log('snake');
-// console.log('x: ' + snake[0].x);
-// console.log('y: ' + snake[0].y);
-// console.log('food');
-// console.log('x: ' + food.x);
-// console.log('y: ' + food.y);
-
-// event.keyCode:
-// 37 = seta para esquerda
-// 38 = seta para cima
-// 39 = seta para direita
-// 40 = seta para baixo
-// console.log(event.keyCode);
