@@ -9,11 +9,11 @@ let snake = [];
 // Inicio da cobrinha
 snake[0] = {
     x: 8 * box,
-    y: 8 * box  
+    y: 8 * box
 }
 
 // Direção
-let direction = "right"
+let direction = "right";
 
 // Comida
 let food = {
@@ -101,56 +101,30 @@ function iniciarJogo(){
     //método unshift adiciona como
     //primeiro quadradinho da cobrinha
     snake.unshift(newHead);
+
+    if (pontos != snake.length-1) {
+        pontos++;
+        document.getElementById('pontuacao').innerText = pontos;
+    }    
+    
+    if (pontos == pontosProximaFase) {
+        fase++;
+        pontosProximaFase = pontosProximaFase + pontosPorFase;
+
+        time = time - (pontosPorFase * 10);
+        
+        clearInterval(jogo);
+        jogo = setInterval(iniciarJogo, time);
+
+        document.getElementById('fase').innerText = fase;
+        document.getElementById('velocidade').innerText = time; 
+    }
 }
 
-let jogo = setInterval(iniciarJogo, 1000);
+let time = 200; 
+let jogo = setInterval(iniciarJogo, time);
 
-
-
-
-
-
-
-
-
-
-
-// console.clear();
-// console.log('snake');
-// console.log('x: ' + snake[0].x);
-// console.log('y: ' + snake[0].y);
-// console.log('food');
-// console.log('x: ' + food.x);
-// console.log('y: ' + food.y);
-
-// event.keyCode:
-// 37 = seta para esquerda
-// 38 = seta para cima
-// 39 = seta para direita
-// 40 = seta para baixo
-// console.log(event.keyCode);
-
-
-
-
-
-
-
-
-
-
-
-// console.clear();
-// console.log('snake');
-// console.log('x: ' + snake[0].x);
-// console.log('y: ' + snake[0].y);
-// console.log('food');
-// console.log('x: ' + food.x);
-// console.log('y: ' + food.y);
-
-// event.keyCode:
-// 37 = seta para esquerda
-// 38 = seta para cima
-// 39 = seta para direita
-// 40 = seta para baixo
-// console.log(event.keyCode);
+let pontos = 0;
+let pontosPorFase = 2
+let pontosProximaFase = pontosPorFase;
+let fase = 1;
